@@ -10,8 +10,11 @@ import java.awt.*;
 
 public class TabPanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8707505020077303802L;
 	private JTabbedPane tabPane;
-	private GridBagLayout g;
 	private DashTab dt;
 	private EmpTab et;
 	private ProTab pt;
@@ -31,7 +34,7 @@ public class TabPanel extends JPanel {
 		tabPane.setBackground(Color.WHITE);
 		
 		dt = new DashTab();
-		tabPane.addTab("Dashboard", dt.getDashTab());
+		tabPane.addTab("Dashboard", dt.getDashCardLayout());
 		tabPane.setBackgroundAt(0, (new Color(255, 255, 255)));
 		
 		et = new EmpTab();
@@ -39,11 +42,11 @@ public class TabPanel extends JPanel {
 		tabPane.setBackgroundAt(1, (new Color(255, 204, 153)));
 		
 		pt = new ProTab();
-		tabPane.addTab("Projects", pt.getProTab());
+		tabPane.addTab("Projects", pt.getCardPanel());
 		tabPane.setBackgroundAt(2, (new Color(204, 255, 102)));
 		
 		ct = new CusTab();
-		tabPane.addTab("Customers", ct.getCusTab());
+		tabPane.addTab("Customers", ct.getCusCardHolder());
 		tabPane.setBackgroundAt(3, (new Color(153, 204, 255)));
 
 		rt = new RepTab();
@@ -58,7 +61,5 @@ public class TabPanel extends JPanel {
 		setBackground(Color.WHITE);
 		setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2, Color.gray));
 		add(tabPane);
-
-
 	}
 }
